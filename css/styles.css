@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css?family=Karla:400,700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+  line-height: 1.5;
+  background-color: #e5eff5;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  overflow: auto;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  grid-template: "header header" 219px "section1 section2" 258px / 313px 313px;
+  -webkit-box-shadow: 5px 10px 18px #888888;
+          box-shadow: 5px 10px 18px #888888;
+  margin: 53px auto 40px;
+}
+
+.grid-container .header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  grid-area: header;
+  background-color: white;
+  padding: 32px;
+  color: #98a6bd;
+}
+
+.grid-container .header-container h2 {
+  color: #2ab2af;
+}
+
+.grid-container .header-container h3 {
+  color: #c0df34;
+}
+
+.grid-container .subscription-container {
+  color: white;
+  grid-area: section1;
+  background-color: #2ab2af;
+  padding: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.grid-container .subscription-container .price-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid-container .subscription-container .price-container h2 {
+  margin-right: 12px;
+}
+
+.grid-container .subscription-container .price-container p {
+  color: #e5eff5;
+  opacity: 0.5;
+}
+
+.grid-container .subscription-container p {
+  color: #e5eff5;
+}
+
+.grid-container button {
+  background-color: #c0df34;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 14px 32px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-box-shadow: 5px 10px 18px #888888;
+          box-shadow: 5px 10px 18px #888888;
+}
+
+.grid-container button:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  opacity: 0.8;
+}
+
+.grid-container .about-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: white;
+  background-color: #2ab2af;
+  opacity: 0.8;
+  grid-area: section2;
+  padding: 32px;
+}
+
+.grid-container .about-container p {
+  color: #e5eff5;
+}
+
+@media screen and (max-width: 765px) {
+  .grid-container {
+    grid-template: "header" 237px "section1" 1fr "section2" 1fr / 276px;
+  }
+  .grid-container .header-container {
+    grid-area: header;
+    padding: 20px;
+  }
+  .grid-container .header-container h1 {
+    font-size: 1rem;
+  }
+  .grid-container .header-container h3 {
+    font-size: 0.82rem;
+  }
+  .grid-container .header-container p {
+    font-size: 0.72rem;
+  }
+  .grid-container .subscription-container {
+    grid-area: section1;
+    padding: 20px;
+  }
+  .grid-container .subscription-container h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  .grid-container .subscription-container .price-container p {
+    margin-bottom: 0;
+  }
+  .grid-container .subscription-container p {
+    font-size: 0.72rem;
+    margin-bottom: 25px;
+  }
+  .grid-container .about-container {
+    grid-area: section2;
+    padding: 20px;
+  }
+  .grid-container .about-container h3 {
+    font-size: 1rem;
+  }
+  .grid-container .about-container p {
+    width: 68%;
+    font-size: 0.72rem;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

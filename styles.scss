@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css?family=Karla:400,700&display=swap");
+
+// Variables
+$generic-box-shadow: 5px 10px 18px #888888;
+$generic-border: 1px solid #f1f1f1;
+$generic-border-radius: 10px;
+
+// Primary
+$cyan: hsl(179, 62%, 43%);
+$bright-yellow: hsl(71, 73%, 54%);
+
+// Neutral
+$light-gray: hsl(204, 43%, 93%);
+$grayish-blue: hsl(218, 22%, 67%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+  line-height: 1.5;
+  background-color: $light-gray;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template:
+    "header header" 219px
+    "section1 section2" 258px
+    / 313px 313px;
+  box-shadow: $generic-box-shadow;
+  margin: 53px auto 40px;
+  // overflow: auto;
+
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    grid-area: header;
+    background-color: white;
+    padding: 32px;
+    color: $grayish-blue;
+
+    h2 {
+      color: $cyan;
+    }
+    h3 {
+      color: $bright-yellow;
+    }
+  }
+
+  .subscription-container {
+    color: white;
+    grid-area: section1;
+    background-color: $cyan;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .price-container {
+      display: flex;
+      align-items: center;
+
+      h2 {
+        margin-right: 12px;
+      }
+
+      p {
+        color: $light-gray;
+        opacity: 0.5;
+      }
+    }
+
+    p {
+      color: $light-gray;
+    }
+  }
+
+  button {
+    background-color: $bright-yellow;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 14px 32px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: $generic-box-shadow;
+
+    &:hover {
+      box-shadow: none;
+      opacity: 0.8;
+    }
+  }
+
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    background-color: $cyan;
+    opacity: 0.8;
+    grid-area: section2;
+    padding: 32px;
+
+    p {
+      color: $light-gray;
+    }
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .grid-container {
+    grid-template:
+      "header" 237px
+      "section1" 1fr
+      "section2" 1fr
+      / 276px;
+    .header-container {
+      grid-area: header;
+      padding: 20px;
+
+      h1 {
+        font-size: 1rem;
+      }
+
+      h3 {
+        font-size: 0.82rem;
+      }
+
+      p {
+        font-size: 0.72rem;
+      }
+    }
+
+    .subscription-container {
+      grid-area: section1;
+      padding: 20px;
+
+      h3 {
+        font-size: 1rem;
+        margin-bottom: 15px;
+      }
+
+      .price-container {
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      p {
+        font-size: 0.72rem;
+        margin-bottom: 25px;
+      }
+    }
+
+    .about-container {
+      grid-area: section2;
+      padding: 20px;
+
+      h3 {
+        font-size: 1rem;
+      }
+
+      p {
+        width: 68%;
+        font-size: 0.72rem;
+      }
+    }
+  }
+}
